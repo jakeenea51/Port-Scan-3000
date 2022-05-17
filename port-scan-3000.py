@@ -52,7 +52,7 @@ def scan():
     while not q.empty():
         port = q.get()
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-            socket.setdefaulttimeout(0.001)
+            socket.setdefaulttimeout(0.1)
             try:
                 result = sock.connect_ex((target, port))
                 if result == 0:
